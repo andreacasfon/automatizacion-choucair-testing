@@ -33,7 +33,11 @@ public class SearchTest {
  public void testCapacidad () throws InterruptedException {
 	 driver.findElement(capacidadLinkLocator).click();
 	 Thread.sleep(20000);
-	 if (driver.findElement(imag).isDisplayed()) {	
+	 if (driver.findElement(imag).isDisplayed()) {
+		
+		 
+		 
+		
 	}
 	
 		 
@@ -47,7 +51,6 @@ public class SearchTest {
  public void testPortafolio() throws InterruptedException {
 	 driver.findElement(portafolioLinkLocator).click();
 	 Thread.sleep(20000);
-	 
  }
  @After
  public void teraDown() {

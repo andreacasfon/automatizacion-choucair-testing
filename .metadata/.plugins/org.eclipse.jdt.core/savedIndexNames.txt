@@ -35,5 +35,4 @@ INDEX VERSION 1.131+/home/jacastellanos/Escritorio/prueba_andrea/.metadata/.plug
 821608291.index
 2946293432.index
 3066711521.index
-688555844.index
 1693498090.index
