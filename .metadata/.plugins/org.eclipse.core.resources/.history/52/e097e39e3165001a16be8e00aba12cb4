@@ -1,0 +1,40 @@
+package com.Quality.prueba;
+
+import static org.junit.Assert.assertEquals;
+
+import java.util.concurrent.TimeUnit;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.By.ByCssSelector;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class SearchTest {
+	
+	private WebDriver driver; 
+	 By capacidadLinkLocator = By.className("Capacidades");
+			 //("https://www.choucairtesting.com/wp-content/uploads/2018/10/investigacion.png\n" );
+	 //By capacidadByPage = By.xpath("https://www.choucairtesting.com/wpcpntent/uploads/2018/10/investigacion.png");
+	 @Before	
+	public void Setup() {
+		System.setProperty("webdriver.chrome.driver", "./src/test/resources/driver/chromedriver.exe");
+		driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("https://www.choucairtesting.com/servicios/");
+		}
+ @Test
+ public void testCapacidad () throws InterruptedException {
+	 driver.findElement(capacidadLinkLocator).click();
+	 Thread.sleep(2000);
+	// if (driver.findElement(capacidadByPage).isDisplayed()){
+		 
+ }
+ @After
+ public void teraDown() {
+	 driver.close();
+ }
+}
