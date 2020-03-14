@@ -14,43 +14,49 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class SearchTest {
-	
-	private WebDriver driver; 
-	 By capacidadLinkLocator = By.id("capacidades");
-	 By imag = By.id("1c3887a");
-	 By comoLoHacemosLinkLocator = By.id("hacemos");
-	 By portafolioLinkLocator = By.id("portafolio");
-	 By show = By.tagName("");
-	
-	 @Before	
+
+	private WebDriver driver;
+	By capacidadLinkLocator = By.name("elementor-image-box-wrapper");
+	By imag = By.id("1c3887a");
+	By comoLoHacemosLinkLocator = By.id("hacemos");
+	By portafolioLinkLocator = By.id("portafolio");
+	By show = By.tagName("");
+	By cookies = By.id("cookie_action_close_header");
+
+	@Before
 	public void Setup() {
 		System.setProperty("webdriver.chrome.driver", "./src/test/resources/driver/chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		driver.get("https://www.choucairtesting.com/servicios/");
-		}
- @Test
- public void testCapacidad () throws InterruptedException {
-	 driver.findElement(capacidadLinkLocator).click();
-	 Thread.sleep(20000);
-	 if (driver.findElement(imag).isDisplayed()) {	
+		driver.get("https://www.choucairtesting.com/servicio/");
+	}
+
+	@Test
+	public void testCookies()  {
+		driver.findElement(cookies).click();
+		
 	}
 	
-		 
- }
- 
- public void testHacemos () throws InterruptedException {
-	 driver.findElement(comoLoHacemosLinkLocator).click();
-	 Thread.sleep(20000);
-	 }
- 
- public void testPortafolio() throws InterruptedException {
-	 driver.findElement(portafolioLinkLocator).click();
-	 Thread.sleep(20000);
-	 
- }
- @After
- public void teraDown() {
-	 driver.close();
- }
+	@Test
+	public void testCapacidad() throws InterruptedException {
+		driver.findElement(capacidadLinkLocator).click();
+		Thread.sleep(20000);
+	}
+
+	@Test
+	public void testHacemos() throws InterruptedException {
+		driver.findElement(comoLoHacemosLinkLocator).click();
+		Thread.sleep(20000);
+	}
+
+	@Test
+	public void testPortafolio() throws InterruptedException {
+		driver.findElement(portafolioLinkLocator).click();
+		Thread.sleep(20000);
+	}
+
+	@After
+	public void tearDown() {
+		driver.close();
+	}
 }
