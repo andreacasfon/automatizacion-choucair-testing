@@ -1,6 +1,7 @@
 **** Automatizacion**
   Se utilizo lo siguiente:
-            
+  
+          Sistema operativo: Linux  
           Lenguaje:Java
           Tipo de proyecto: Maven (version 3.6.3)
           Framework ejecución: Junit 
